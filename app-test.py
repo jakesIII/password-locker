@@ -22,8 +22,10 @@ class TestUser(unittest.TestCase):
 
     def test_saved_accounts(self):
         '''Test case for multiple saved accounts'''
-        # self.new_user.
-        self.assertEqual(len(User.account_list), 0)
+        self.new_user.save_acc ()
+        test_user = User ("Derrik", "derrick452")
+        test_user.save_acc()
+        self.assertEqual(len(User.account_list), 2)
 
 if __name__ == '__main__':
     unittest.main()
