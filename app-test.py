@@ -22,10 +22,21 @@ class TestUser(unittest.TestCase):
 
     def test_saved_accounts(self):
         '''Test case for multiple saved accounts'''
+
         self.new_user.save_acc ()
         test_user = User ("Derrik", "derrick452")
         test_user.save_acc()
         self.assertEqual(len(User.account_list), 2)
+
+    def test_delete_user(self):
+        '''test case to determine if we can remove account from list'''
+
+        self.new_user.save_acc()
+        test_user = User ("Derrik", "derrick452")
+        test_user.save_acc()
+
+        self.new_user.delete_user()
+        self.assertEqual(len(User.account_list), 1)
 
 if __name__ == '__main__':
     unittest.main()
