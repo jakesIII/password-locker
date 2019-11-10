@@ -14,3 +14,6 @@ class User:
     def save_acc(self):
 
         User.account_list.append(self)
+
+    def delete_acc(self):
+        User.account_list.remove(self)
