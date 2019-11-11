@@ -12,8 +12,20 @@ class User:
         self.password = password
 
     def save_acc(self):
+        '''Method to push new created account and password to storage'''
 
         User.account_list.append(self)
 
     def delete_acc(self):
+        '''method to remove account and password from the list '''
+        
         User.account_list.remove(self)
+
+    @classmethod
+    def find_by_username(cls, username):
+        '''Locating an account in the list'''
+
+        for user in cls.account_list:
+            if user.username == first_name:
+                return True
+        return False
