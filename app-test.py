@@ -18,7 +18,7 @@ class TestUser(unittest.TestCase):
     def test_saved_acc(self):
         '''Test case saving username and passwords'''
 
-        self.assertEqual(len(User.account_list), 1)
+        self.assertEqual(len(User.account_list), 3)
 
     def test_saved_accounts(self):
         '''Test case for multiple saved accounts'''
@@ -26,7 +26,7 @@ class TestUser(unittest.TestCase):
         self.new_user.save_acc ()
         test_user = User ("Derrik", "derrick452")
         test_user.save_acc()
-        self.assertEqual(len(User.account_list), 3)
+        self.assertEqual(len(User.account_list), 5)
 
     def test_delete_acc(self):
         '''test case to determine if we can remove account from list'''
@@ -37,6 +37,22 @@ class TestUser(unittest.TestCase):
 
         self.new_user.delete_acc()
         self.assertEqual(len(User.account_list), 1)
+
+    def test_find_by_username(self):
+        '''test to find user by username'''
+
+        self.new_user.save_acc()
+        test_user = User ("Derrik", "derrick452")
+        test_user.save_acc()
+
+        located_user = User.find_by_username("Derrik")
+
+        self.assertEqual(located_user.username, test_user.username)
+
+    def test_display_account(self):
+        '''test to display user'''
+
+        self.assertEqual(User.display_account(), User.account_list)
 
 if __name__ == '__main__':
     unittest.main()
