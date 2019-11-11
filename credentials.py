@@ -19,7 +19,7 @@ class Credentials:
 
     def delete_data(self):
         '''Method to delete an account of our list'''
-        
+
         Credentials.generated.remove(self)
 
     def random_password(self):
