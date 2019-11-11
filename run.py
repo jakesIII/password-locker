@@ -82,7 +82,7 @@ def main():
 
             print (f"Data for {app_title} has been saved.")
 
-        elif short_code == "cd"
+        elif short_code == "cd":
             print ("Create new account data...")
 
             print ("Enter the name of the account")
@@ -95,7 +95,9 @@ def main():
             answer_password = input(">>>")
 
             if answer_password == "y":
-                gener_password = random_password()
+                print("Input password preffered length...")
+                pass_length= int(input(">>>"))
+                gener_password = pass_generate(pass_length)
                 print(f"{app_title}'s password is {gener_password}")
 
             elif answer_password == "n":
@@ -110,8 +112,23 @@ def main():
             print (f"Data for {app_title} has been saved.")
             print('\n')
 
-            elif short_code == "vd"
-                if 
+        elif short_code == "vd":
+                if display_data():
+                    print("Here is a list of all your stored account data")
+                    print('\n')
+
+                    for data in display_data():
+                        print (f"Application Title >>> {data.app_title}")
+                        print (f"Application Username >>> {data.acc_name}")
+                        print (f"Application Password >>> {data.acc_password}")
+
+                else:
+                    print("You don't seem to have any stored account data")
+                    print('\n')
+
+        elif short_code == "dd": 
+
+
 
 
 
