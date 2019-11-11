@@ -29,3 +29,7 @@ class Credentials:
         gen_password = ''.join(random.choice(char) for i in range (0,9))
 
         return random_password
+
+    @classmethod
+    def display_account():
+        return cls.generated
