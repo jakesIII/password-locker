@@ -41,7 +41,7 @@ class TestUser(unittest.TestCase):
     def test_save_data(self):
         '''Tests if data is being saved'''
 
-        self.assertEqual(len(Credentials.generated), 1)
+        self.assertEqual(len(Credentials.generated), 2)
 
     def test_delete_data(self):
         '''Tests if data is removed from list'''
@@ -53,7 +53,13 @@ class TestUser(unittest.TestCase):
         self.generate.delete_data()
         self.assertEqual(len(Credentials.generated), 1)
 
+    def test_random_password(self):
 
+        generated_password = Credentials.random_password(12)
+        test_data = Credentials ("gmail", "obj", generated_password)
+        test_data.save_data()
+
+        self.assertEqual(len(test_data.acc_password), 12)
 
 
 

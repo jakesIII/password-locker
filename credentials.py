@@ -27,9 +27,9 @@ class Credentials:
         '''method to generate a random password'''
 
         characters = string.ascii_lowercase + string.digits
-        gen_password = ''.join(random.choice(char) for i in range (0,9))
+        gen_password = ''.join(random.choice(characters) for i in range (0,12))
 
-        return random_password
+        return gen_password
 
     @classmethod
     def display_account():
