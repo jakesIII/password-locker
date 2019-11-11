@@ -49,42 +49,69 @@ def pass_generate(length):
     return Credentials.random_password(length)
 
 def main():
-    print("Wagwan Fam, welcome to password locker! Login...")
+    print("This is password locker! To sign up, key 'su', to log in, key 'li' ...")
+    answer = input ('>>> ')
 
-    username = input()
-    password = input ()
+    if answer = "li":
 
-    while True:
-        pass 
+        print("Enter a Username: ")
+        username = input('Enter username: ')
 
+        print("Enter a password: ")
+        password = input ('Enter password: ')
 
+    log_in = authenticate_user(username, password) if answer == 'li' else False
 
+    while log_in:
+        print("Use the following short codes to navigate \n ad - to save an existing account data \n cd - to create new account data \n vd - to view list of inputed data \n dd - to delete account data from list")
+        short_code = input(">>>")
 
+        if short_code == "ad":
+            print ("Enter existing account data...")
 
+            print ("Enter the name of the account")
+            app_title = input(">>>")
 
+            print ("Enter the username to the account")
+            acc_name = input (">>>")
 
+            print ("Enter the account's password")
+            acc_password = input (">>>")
 
+            save_data(users_data(app_title, acc_name, acc_password))
 
+            print (f"Data for {app_title} has been saved.")
 
+        elif short_code == "cd"
+            print ("Create new account data...")
 
+            print ("Enter the name of the account")
+            app_title = input(">>>")
 
+            print ("Enter the username to the account")
+            acc_name = input (">>>")
 
+            print ("For the password; \n key in 'y' if you want a generated password \n 'n' if you want to input a custom one ")
+            answer_password = input(">>>")
 
+            if answer_password == "y":
+                gener_password = random_password()
+                print(f"{app_title}'s password is {gener_password}")
 
+            elif answer_password == "n":
+                print("Input your own password")
+                acc_password = input (">>>")
 
+            else:
+                print ("Your choice is in valid, try again")
 
+            save_data(users_data(app_title, acc_name, acc_password))
 
+            print (f"Data for {app_title} has been saved.")
+            print('\n')
 
-
-
-
-
-
-
-
-
-
-
+            elif short_code == "vd"
+                if 
 
 
 
