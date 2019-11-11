@@ -8,13 +8,14 @@ class Credentials:
 
     generated = []
 
-    def __init__(self, app, password):
-        self.app = app
+    def __init__(self, app_title, acc_name, acc_password):
+        self.app_title = app_title
         self.acc_name = acc_name
         self.acc_password = acc_password
 
     def save_data(self):
         '''Method that saves our accounts'''
+
         Credentials.generated.append(self)
 
     def delete_data(self):

@@ -9,12 +9,18 @@ class TestUser(unittest.TestCase):
         '''set up a method to run before each case '''
 
         self.new_user = User("Jakes", "deepinthot")
+        self.generate = Credentials ("twitter", "lordSpiral", "sitUp!")
+
 
     def test_init(self):
         '''Testing to see if the object is properly initialized'''
 
         self.assertEqual(self.new_user.username, "Jakes")
         self.assertEqual(self.new_user.password, "deepinthot")
+
+        self.assertEqual(self.generate.app_title, "twitter")
+        self.assertEqual(self.generate.acc_name, "lordSpiral")
+        self.assertEqual(self.generate.acc_password, "sitUp!")
 
     def test_saved_acc(self):
         '''Test case saving username and passwords'''
@@ -31,8 +37,49 @@ class TestUser(unittest.TestCase):
         user_exist = User.user_auth("Jakes", "deepinthot")
 
         self.assertTrue(user_exist)
-    #
-    # def test_saved_accounts(self):
+
+    def test_save_data(self):
+        '''Tests if data is being saved'''
+
+        self.assertEqual(len(Credentials.generated), 1)
+
+    def test_delete_data(self):
+        '''Tests if data is removed from list'''
+
+        self.generate.save_data()
+        test_data = Credentials ("insta", "obj", "GangSigns")
+        test_data.save_data()
+
+        self.generate.delete_data()
+        self.assertEqual(len(Credentials.generated), 1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #     def test_saved_accounts(self):
     #     '''Test case for multiple saved accounts'''
     #
     #     self.new_user.save_acc ()
