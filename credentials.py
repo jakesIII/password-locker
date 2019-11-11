@@ -9,6 +9,8 @@ class Credentials:
     generated = []
 
     def __init__(self, app_title, acc_name, acc_password):
+        '''Method to instanciate object properties'''
+
         self.app_title = app_title
         self.acc_name = acc_name
         self.acc_password = acc_password
@@ -32,5 +34,7 @@ class Credentials:
         return gen_password
 
     @classmethod
-    def display_account():
+    def display_account(cls, self):
+        '''Method to display stored account data'''
+        
         return cls.generated

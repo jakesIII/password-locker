@@ -24,23 +24,3 @@ class User:
             if acc.username == username and acc.password == password:
                 return True
         return False
-
-
-    # def delete_acc(self):
-    #     '''method to remove account and password from the list '''
-    #
-    #     User.account_list.remove(self)
-    #
-    # @classmethod
-    # def find_by_username(cls, username):
-    #     '''Locating an account in the list'''
-    #
-    #     for acc in cls.account_list:
-    #         if acc.username == username:
-    #             return acc
-    #
-    # @classmethod
-    # def display_account(cls):
-    #     '''function that displays accounts'''
-    #
-    #     return cls.account_list

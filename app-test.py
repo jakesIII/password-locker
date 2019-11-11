@@ -54,12 +54,18 @@ class TestUser(unittest.TestCase):
         self.assertEqual(len(Credentials.generated), 1)
 
     def test_random_password(self):
-
+        '''Test for password generation and of 12 characters'''
+        
         generated_password = Credentials.random_password(12)
         test_data = Credentials ("gmail", "obj", generated_password)
         test_data.save_data()
 
         self.assertEqual(len(test_data.acc_password), 12)
+
+    def test_display_account(self):
+        '''Test for data display'''
+
+        self.assertEqual(Credentials.display_account(self), Credentials.generated)
 
 
 
