@@ -38,10 +38,10 @@ def display_data():
 
     return Credentials.display_account()
 
-def delete_data():
+def delete_data(x):
     '''Function to remove stored data'''
 
-    credentials.delete_data()
+    Credentials.delete_data(x)
 
 def find_account(app_title):
     '''Function to locate and display account details'''
@@ -143,10 +143,10 @@ def main():
                 elif short_code == "dd":
                     print ("Enter the account name of the data you'd like to delete...")
                     delete_answer = input(">>>")
-
-                    if find_account(delete_answer):
+                    found_acc = find_account(delete_answer)
+                    if (found_acc):
                         print (f"{delete_answer} you are here ")
-                        delete_data()
+                        delete_data(found_acc)
                         print(f"Your {delete_answer}'s data has been successfully deleted")
 
                 elif short_code == "ex":
