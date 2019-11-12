@@ -36,5 +36,15 @@ class Credentials:
     @classmethod
     def display_account(cls, self):
         '''Method to display stored account data'''
-        
+
         return cls.generated
+
+    @classmethod
+    def locate_account(cls, app_title):
+        '''Method to search and display the account data'''
+
+        for acc in cls.generated:
+            if acc.app_title == app_title:
+                return acc
+
+                
