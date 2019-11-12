@@ -34,7 +34,7 @@ class Credentials:
         return gen_password
 
     @classmethod
-    def display_account(cls, self):
+    def display_account(cls):
         '''Method to display stored account data'''
 
         return cls.generated
@@ -46,5 +46,3 @@ class Credentials:
         for acc in cls.generated:
             if acc.app_title == app_title:
                 return acc
-
-                

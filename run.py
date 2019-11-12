@@ -36,7 +36,7 @@ def save_user_data(credentials):
 def display_data():
     '''Function to display saved data'''
 
-    return credentials.display_account()
+    return Credentials.display_account()
 
 def delete_data():
     '''Function to remove stored data'''
@@ -70,6 +70,7 @@ def main():
             print('\n')
 
             while log_in:
+                print('\n')
                 print("Use the following short codes to navigate \n ad - to save an existing account data \n cd - to create new account data \n vd - to view list of inputed data \n dd - to delete account data from list \n ex - to exit application")
                 short_code = input(">>>")
 
@@ -128,6 +129,7 @@ def main():
                                 print (f"Application Title >>> {data.app_title}")
                                 print (f"Application Username >>> {data.acc_name}")
                                 print (f"Application Password >>> {data.acc_password}")
+                                print('\n')
 
                         else:
                             print("You don't seem to have any stored account data")
