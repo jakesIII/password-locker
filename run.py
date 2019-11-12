@@ -43,6 +43,11 @@ def delete_data():
 
     credentials.delete_data()
 
+def find_account(app_title):
+    '''Function to locate and display account details'''
+
+    return Credentials.locate_account(app_title)
+
 def pass_generate(length):
     '''Function to create a random password'''
 
@@ -136,7 +141,13 @@ def main():
                             print('\n')
 
                 elif short_code == "dd":
-                    pass
+                    print ("Enter the account name of the data you'd like to delete...")
+                    delete_answer = input(">>>")
+
+                    if find_account(delete_answer):
+                        print (f"{delete_answer} you are here ")
+                        delete_data()
+                        print(f"Your {delete_answer}'s data has been successfully deleted")
 
                 elif short_code == "ex":
                     print("Exiting the application...Goodbye!")
